@@ -1,7 +1,6 @@
 {
   "name": "rectangleCalculator",
   "version": "1.0.0",
-  "description": "",
   "main": "Gruntfile.js",
   "dependencies": {},
   "devDependencies": {
@@ -29,5 +28,9 @@
   "bugs": {
     "url": "https://github.com/duyumengdym/rectangleCalculator/issues"
   },
-  "homepage": "https://github.com/duyumengdym/rectangleCalculator#readme"
+  "homepage": "https://github.com/duyumengdym/rectangleCalculator#readme",
+  "directories": {
+    "test": "test"
+  },
+  "description": ""
 }
