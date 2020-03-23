@@ -1,11 +1,3 @@
-/*
- * @Descripttion: 
- * @version: 
- * @Author: sueRimn
- * @Date: 2020-03-23 10:57:50
- * @LastEditors: sueRimn
- * @LastEditTime: 2020-03-23 11:52:28
- */
 module.exports = function (grunt) {
   grunt.initConfig({
     htmlhint: {

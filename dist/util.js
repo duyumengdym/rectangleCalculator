@@ -1,1 +1,1 @@
-function rectangle(){return{perimeter:function(r,e){return 2*(Number(r)+Number(e))},area:function(r,e){return Number(r)*Number(e)}}}
+function roundFractional(r,n){return Math.round(r*Math.pow(10,n))/Math.pow(10,n)}function rectangle(){return{perimeter:function(r,n){return 2*roundFractional(Number(r)+Number(n),1)},area:function(r,n){return roundFractional(Number(r)*Number(n),2)}}}
