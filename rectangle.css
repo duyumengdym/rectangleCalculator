@@ -17,12 +17,14 @@ span{
 }
 #width-validation-message{
     color: red;
-    width: 180px;
+    width: 200px;
     text-align: center;
     height: 20px;
 }
 #height-validation-message{
     color: red;
+    width: 200px;
+    text-align: center;
     height: 20px;
 }
 #perimeter{

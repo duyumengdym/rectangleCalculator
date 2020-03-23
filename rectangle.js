@@ -1,49 +1,41 @@
 /* global $:true*/ 
-$(function() {
+$(function(){
   var $width = $('#width'),
       $height = $('#height'),
       $btnCal = $('#calculate'),
       $perimeter = $('#perimeter'),
-      $area = $('#area');
+      $area = $('#area'),
+      $widthValidate = $('#width-validation-message'),
+      $heightValidate = $('#height-validation-message'),
+      istrue = false;
+  $width.focusout(function(){
+      var result = validate($width.val());
+      istrue = result.istrue;
+      if(!result.istrue){
+          $widthValidate.html('宽度' + result.reason);
+          $width.select(); 
+      }else{
+        $widthValidate.html('');
+      }
+  });
+  $height.focusout(function(){
+      var result = validate($height.val());
+      istrue = result.istrue;
+      if(!result.istrue){
+          $heightValidate.html('高度' + result.reason);
+          $height.select(); 
+      }else{
+        $heightValidate.html('');
+      }
+  });
   $btnCal.click(function(){
-    if(!validate('#width')||!validate('#height')) return;
-
-    var w = Number($width.val()),
-        h = Number($height.val());
-
+    if(!istrue){
+      return;
+    }
+    var w = $width.val(),       
+        h = $height.val();
     var rect = rectangle();
     $perimeter.val(rect.perimeter(w, h));
     $area.val(rect.area(w, h));
-
-  });
-  $width.focusout(function(){
-    if(!validate('#width')) $width.select();
-  }) 
-  $height.focusout(function(){
-    if(!validate('#height')) $width.select();
-  }) 
-  function validate(field){
-    // det DOM error message
-    var $data=$(field),
-        $msg=$(field+'-validation-message');
-    // null
-    if($data.val()===''){
-      $msg.html("不能为空！");
-      $data.select();
-      return false;
-    }
-    // number
-    if(!(/^-?(0|[1-9]\d*)(\.\d*)?([eE][+-]?\d+)?$/.test($data.val()))){
-      $msg.html("必须是数值！");
-      $data.select();
-      return false;
-    }
-    // validate>0
-    if($data.val()<0){
-      $msg.html("必须大于0！");
-      $data.select();
-      return false;
-    }
-    return true;
-  }
+  })
 });
