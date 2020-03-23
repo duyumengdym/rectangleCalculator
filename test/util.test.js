@@ -53,3 +53,6 @@ describe('矩形计算器周长计算功能测试套件', function(){
     expect(isNaN(r.perimeter('a', 'b'))).to.be.ok;
   });
 });
+
+describe('字段级校验验证', function(){
+});
